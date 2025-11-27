@@ -34,6 +34,33 @@
         console.log("You cannot drive, sorry");
       }  
 
+      // falsy(acts like false) - false, null, 0, '', NaN, undefined
+      // truthy(acts like true) - anything except falsy values
+
+      const itemCount = 0;
+
+      if(itemCount){
+        console.log("The cart has items");
+      }else{
+        console.log("The cart is empty");
+      }
+      
+      const result = 0 ? 'truthy': 'falsy';
+
+      console.log(result);
+
+      // Guard operator(&&): just like and checks the 
+      // first element if its false then the expression is false
+      // hence shortcuts the execution
+
+      const message = 0 && "it is guarded";
+
+      console.log(message);
+
+      //Default operator(||)
+
+      const currency = undefined || 'USD';
+      console.log(currency)
 
     </script>
   </body>
