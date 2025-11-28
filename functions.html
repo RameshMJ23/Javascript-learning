@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Functions</title>
+  </head>
+
+  <body>
+    <script>
+      // Functions are written inside scripts because 
+      // they are initiated before the page is created 
+      // So that elements in the page can use these functions
+      function func1(){
+        console.log('First function');
+      }
+
+      func1();
+
+      function calculateTax(cost, tax = 0.1){
+        console.log(cost * tax);
+      }
+
+      calculateTax(5000, 0.1);
+      // Parameters that are not passed are undefined
+      // else default values can be assigned to them
+      calculateTax(2000);
+
+    </script>
+  </body>
+</html>
