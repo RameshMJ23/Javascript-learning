@@ -1,0 +1,36 @@
+<body>
+  <script>
+    console.log(connvertLength(32, 'km' , 'miles'));
+    console.log(connvertLength(50, 'miles' , 'km'));
+    console.log(connvertLength(5, 'miles' , 'feet'));
+    console.log(connvertLength(5, 'km' , 'feet'));
+    
+    console.log(connvertLength(5, 'lbs' , 'feet'));
+    console.log(connvertLength(26400, 'feet' , 'miles'));
+
+
+    function connvertLength(Length, from, to){
+
+      if((from !== 'km' && from !== 'miles' && from !== 'feet') ||
+        (to !== 'feet'&& to !== 'km'&&to !== 'miles')){
+        return `invalid coversion ${from}, ${to}`
+      }
+
+      if(from === to) 
+        return Length;
+      else if(from === 'km' && to === 'miles'){
+        return Length/1.6;
+      }else if(from === 'miles' && to === 'km'){
+        return Length * 1.6;
+      }else if(from === 'feet' && to === 'km'){
+        return Length/3281;
+      }else if(from === 'feet' && to === 'miles'){
+        return Length/5280;
+      }else if(from === 'km' && to === 'feet'){
+        return Length * 3281;
+      }else if(from === 'miles' && to === 'feet'){
+        return Length * 5280;
+      }
+    }  
+  </script>
+</body>
