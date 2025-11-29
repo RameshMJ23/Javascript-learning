@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Objects</title>
+  </head>
+
+  <body>
+    <script>
+      const product = {
+        name: 'socks',
+        price: 50
+      }
+
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+
+      product.name = 'cotton socks';
+      console.log(product);
+
+      product.isAvail = true;
+      console.log(product);
+
+      delete product.isAvail;
+      console.log(product);
+
+      let product2 = {
+        name: 'shirt',
+        // Certain property names cannot be created normally
+        // as it might contain special cahracters in them 
+        ['delivery-time']: '1 day',
+        rating: {
+          stars: 4.5,
+          count: 85
+        },
+        fun1: function function1(){
+          console.log('function inside product2');
+        }
+      }
+
+      console.log(product2.name);
+
+      //another way to access a property's value
+      console.log(product2['name']);
+      console.log(product2['delivery-time']);
+      console.log(product2.rating.stars);
+      product2.fun1();
+
+      // console is an object and log is a function defined inside it
+      console.log(typeof console);
+      console.log(typeof console.log);
+
+      // creating and parsing JSON
+      const jsonString = JSON.stringify(product2);
+      console.log(JSON.parse(jsonString));
+
+      //auto-boxing
+      // When we create 'hello' javascipt boxes this value
+      // in an object, that provides us with these methods like length and toUpperCase
+      console.log('hello'.length);
+      console.log('hello'.toUpperCase());
+
+      // Object is a reference
+      // JavaScrip doesn't store this object as variable but as a reference 
+      // object1 = reference in memory, this is the reason why change in object1.message get reflected in object.message
+      // refernece of object1 = reference of object2
+
+      // We declared object1 as const but still can change values in object because
+      // const object1 = reference, this reference can't be changed but the values inside reference can. 
+      const object1 = {
+        message: 'hello'
+      }
+
+      const object2 = object1;
+
+      //change in message property affects eachother
+      object1.message = 'Good morning!';
+      console.log(object2.message);
+
+      object2.message = 'Good afternoon!';
+      console.log(object1.message);
+
+      const object3 = {
+        message: 'hello'
+      }
+
+      // false: bacause they have different references though they have same values
+      console.log(object1 === object3); 
+
+      // Destructuring
+
+      const object4 = {
+        name: 'shoes',
+        price: 50
+      }
+
+      // const name = object4.name;
+      // const price = object4.price;
+
+      // ^^ does the same as the previous code
+      const {name, price} = object4;
+
+      console.log(name);
+      console.log(price);
+
+      const message = 'object message';
+
+      /*const object5 = {
+        message: message,
+        method: function fun1(){
+          console.log('func1: Obejct5\'s method');
+        }
+      }*/
+
+      // ^^ does the same as the previous one
+      // message = property shortcut, creates a property with the name messgae and value of message
+      // method = shorthand Method, creates a property with the name method
+      const object5 = {
+        message,
+        method(){
+          console.log('func1: Obejct5\'s method');
+        }
+      }
+
+      console.log(object5.message);
+      console.log(object5.method());
+    </script>
+  </body>
+</html>
