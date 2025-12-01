@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>DOM</title>
+  </head>
+
+  <body>
+    <button class="js-button">js-button</button>
+    <script>
+
+      // DOM helps us to get HTML inside javascript
+      // This enables us to update the HTML elements from javascript
+      // When we get an HTML body inside javascript it takes an object form
+
+      console.log(document.title);
+      document.title = "Changed DOM";
+
+      console.log(document.body);
+      console.log(typeof document.body);
+
+      console.log(document.body.innerHTML);
+      console.log(typeof document.body.innerHTML);
+
+      //document.body.innerHTML = '<button>Hello</button>';
+
+      // querySelector helps us get an exact part of the HTML 
+      // and change only the required parts of the page
+      console.log(document.querySelector('button').innerHTML);
+      document.querySelector('button').innerHTML = 'HIII';
+
+      const jsButtonElement = document.querySelector('.js-button');
+      console.log(jsButtonElement.innerHTML);
+
+      // Converts numbers into strings
+      String(25);
+      console.log(typeof String(25));
+
+      // Type coercion 
+      // for + the numbers are converted into strings 
+      // for /-*, if the string just contains numbers, then its converted into numbers
+      console.log('25' - 5);
+
+      //Document = content inside the page
+      //Window = whole browser
+      //We don't need to type windows because the js adds it for us
+      console.log(window);
+      window.document;
+      window.console;
+      window.alert;
+    </script>
+  </body>
+</html>
