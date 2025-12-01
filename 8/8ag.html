@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Obejcts exercise</title>
+  </head>
+
+  <body>
+    <script>  
+      let product = {
+        name: 'basketball',
+        price: 2095
+      }
+
+      let product2 = {
+        name: 'basketball',
+        price: 2095
+      }
+
+      console.log(product);
+
+      // product.price += 500;
+
+      // console.log(product.price);
+
+      // product['delivery-time'] = '3 days'
+
+      // console.log(product);
+      // console.log(product['delivery-time']);
+
+      console.log(comparePrice(product, product2));
+
+      console.log(isSameProduct(product, product2));
+
+      function comparePrice(p1, p2){
+        return (p1.price < p2.price)
+          ? p1: p2;
+      }
+
+      function isSameProduct(p1, p2){
+        return ((p1.name === p2.name) && (p1.price === p2.price))
+          ? true: false;
+      }
+
+      console.log(String('Good Morning').toLowerCase());
+      console.log(String('text').repeat(2));
+    </script>
+  </body>
+</html>
