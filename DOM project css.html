@@ -27,6 +27,19 @@
       color: black;
     }
 
+    .input-bar{
+      padding: 10px;
+      font-size: 15px;
+    }
+
+    .calculate-button{
+      background-color: green;
+      color: white;
+      padding: 11px 15px;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+    }
   </style>
 
   <body>
@@ -44,10 +57,10 @@
     <!-- onkeydown is an event listener for pressing keys-->
     <input 
       placeholder="input cost"
-      class="js-input-cost"
+      class="js-input-cost input-bar"
       onkeydown="handleCostInput(event);">
     <button 
-      class="js-calculate"
+      class="js-calculate calculate-button"
       onclick="calculateCost();">
       Calculate
     </button>
