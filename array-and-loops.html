@@ -31,6 +31,54 @@
       array1.splice(0, 2);
       console.log(array1);
 
+      // While loop
+
+      i = 1;
+      while(i <= 3){
+        console.log(i);
+        i++;
+      }
+
+      for(i = 1; i <= 3; i++){
+        console.log(i);
+      }
+
+      // standard condition use 'for loop'
+      // Non-standard conditions use 'while loop'
+      // Ex. generate a random number that's atleast 0.5;
+
+      randomNumber = 0;
+      while(randomNumber < 0.5){
+        randomNumber = Math.random();
+        console.log(randomNumber);
+      }
+
+      console.log("required number" + randomNumber);
+
+      //accumulation pattern: creating a variable to accumulate values
+
+      const nums = [1,1,3];
+
+      total = 0;
+
+      for(i = 0; i < nums.length; i++){
+        const num = nums[i];
+        total += num;
+      }
+
+      console.log(total);
+
+      // values doubled;
+      doubledNums = [];
+
+      for(i = 0; i < nums.length; i++){
+        const num = nums[i];
+        doubledVal = num*2;
+        doubledNums.push(doubledVal);
+      }
+
+      console.log(doubledNums)
+
     </script>
   </body>
 </html>
