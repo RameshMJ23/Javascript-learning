@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 
 <html>
+  <link rel="stylesheet" href="styles/styles.css">
   <body>
     <p>Todo list</p>
-    <input class="js-todo-input" placeholder="Add todo">
-    <button onclick="addTodo()">Add</button>
-    <div class="js-all-todos"></div>
+    <div class="info-grid">
+      <input class="js-todo-input todo-input" placeholder="Add todo">
+      <input class="js-date-input date-input" type="date">
+      <button onclick="addTodo()" class="add-button">Add</button>
+    </div>
+    <div class="js-all-todos all-todo"></div>
     <script src="js/todo-list.js"></script>
   </body>
 </html>
