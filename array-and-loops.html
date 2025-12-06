@@ -3,7 +3,7 @@
 <html>
   <body>
     <script>
-      const array1 = [10, 20, 30];
+      /*const array1 = [10, 20, 30];
 
       console.log(array1);
 
@@ -77,8 +77,82 @@
         doubledNums.push(doubledVal);
       }
 
-      console.log(doubledNums)
+      console.log(doubledNums);*/
 
+
+      //arrays are references(like objects)
+      const a1 = [1,2,3];
+      const a2 = a1;
+
+      // as a1 and a2 have same reference it affects both
+      a2.push(4);
+      console.log(a1);
+      console.log(a2);
+
+      //slice creates the copy of the values to store in a different refernece
+      const a3 = a1.slice();
+      a3.push(4);
+      console.log(a1);
+      console.log(a3);
+
+      // destructuring arrays
+      //const firstVal = a1[0];
+      //const secondVal = a1[1];
+      const [firstVal, secondVal] = a1;
+      console.log("FirstVal " + firstVal);
+      console.log("SecVal " + secondVal);
+
+
+      //loops: break, continue
+
+      for(i = 0; i <= 10; i++){
+        if(i % 3 === 0){
+          //skips these value and forces the loop to iterate with next value
+          continue;
+        }
+
+        console.log(i);
+
+        if(i === 8){
+          // breaks and stops the loop from here
+          break; 
+        }
+      }
+
+      i = 0;
+
+      while(i <= 10){
+
+        if(i === 4){
+          // when using continue in while loop incrementation has to be done manually
+          // else it would be an infinite loop
+          i++;
+          continue;
+        }
+        console.log(i);
+        i++;
+      }
+
+  
+      function doubleArrays(nums){
+        doubledNums = [];
+
+        for(i = 0; i < nums.length; i++){
+          const num = nums[i];
+
+          if(num === 0){
+            // return is also a way to end loops
+            return doubledNums;
+          }
+          const doubledVal = num*2;
+          doubledNums.push(doubledVal);
+        }
+
+        console.log(doubledNums);
+      }
+
+      doubleArrays([2,3,5]);
+      console.log(doubleArrays([2,3,100,0, 8]));
     </script>
   </body>
 </html>

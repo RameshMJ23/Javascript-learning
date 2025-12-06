@@ -1,0 +1,30 @@
+body{
+  font-family: Arial;
+  background-color: black;    
+}
+
+.number-buttons, .operator-buttons, .clear-button{
+  font-size: 25px;
+  font-weight: 500;
+  background-color: rgb(51, 51, 51);
+  color: white;
+  height: 55px;
+  width: 55px;
+  border-radius: 30px;
+  border-style: none;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.operator-buttons{
+  background-color: rgb(254, 160, 10);
+}
+
+.view-bar{
+  color: white;
+  font-size: 30px;
+}
+
+.clear-button{
+  font-size: 16px;
+}

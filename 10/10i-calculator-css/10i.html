@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Calculator</title>
+  </head>
+
+  <link rel="stylesheet" href="styles/styles.css">
+  
+  <body>
+    <div>
+      <p class="view-bar">0</p>
+
+      <button class="number-buttons" onclick="
+        updateCalculation('1');
+      ">1</button>
+    
+      <button class="number-buttons" onclick="
+        updateCalculation('2');
+      ">2</button>
+      
+      <button class="number-buttons" onclick="
+        updateCalculation('3');
+      ">3</button>
+
+      <button class="operator-buttons" onclick="
+        updateCalculation('+');
+      ">+</button>
+
+      <p></p>
+
+      <button class="number-buttons" onclick="
+        updateCalculation('4');
+      ">4</button>
+
+      <button class="number-buttons" onclick="
+        updateCalculation('5'); 
+      ">5</button>
+      
+      <button class="number-buttons" onclick="
+        updateCalculation('6');
+      ">6</button>
+      
+      <button class="operator-buttons" onclick="
+        updateCalculation('-');
+      ">-</button>
+
+      <p></p>
+
+      <button class="number-buttons" onclick="
+        updateCalculation('7');
+      ">7</button>
+
+      <button class="number-buttons" onclick="
+        updateCalculation('8');
+      ">8</button>
+      
+      <button class="number-buttons" onclick="
+        updateCalculation('9');
+      ">9</button>
+      
+      <button class="operator-buttons" onclick="
+        updateCalculation('*');
+      ">*</button>
+
+      <p></p>
+
+      <button class="number-buttons" onclick="
+        updateCalculation('0');
+      ">0</button>
+
+      <button class="number-buttons" onclick="
+        updateCalculation('.');
+      ">.</button>
+      
+      <button class="number-buttons" onclick="
+        calculation = eval(calculation);
+        updateViewBar(); 
+      ">=</button>
+      
+      <button class="operator-buttons" onclick="
+        updateCalculation('/');
+      ">/</button>
+
+      <p></p>
+
+      <button class="clear-button" onclick="
+        calculation = ''; 
+        clearViewBar();
+      ">Clear</button>
+
+      <script src="js/calc-logic.js"> </script>
+  </body>
+</html>

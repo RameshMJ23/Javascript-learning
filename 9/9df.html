@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <input placeholder="Your name" onkeypress="
+      if(event.key === 'Enter'){
+        outputName();
+      }
+    ">
+    <button class="submit-button" onclick="
+      outputName();
+    " >
+      Submit
+    </button>
+  </body>
+
+  <script>
+    function outputName(){
+      const name = document.querySelector('input').value
+      console.log(`You name is: ${name}`);  
+    }
+  </script>
+</html>

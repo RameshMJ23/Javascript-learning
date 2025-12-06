@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Cart feature</title>
+  </head>
+
+  <body>
+    <button onclick=" 
+      console.log('Cart quantity: ' + cartQuantity);
+    ">Show Quantity</button>
+    
+    <button onclick="
+      cartQuantity += 1;
+      updateCartQuantity();
+    ">Add to cart</button>
+
+    <button onclick="
+      cartQuantity--;
+      updateCartQuantity();
+    ">Remove from cart</button>
+    
+    <button onclick="
+      cartQuantity += 2;
+      updateCartQuantity();
+    ">+2</button>
+
+    <button onclick="
+      cartQuantity += 3;
+      updateCartQuantity();
+    ">+3</button>
+
+    <button onclick="
+      cartQuantity -= 2;
+      updateCartQuantity();
+    ">-2</button>
+
+    <button onclick="
+      cartQuantity -= 3;
+      updateCartQuantity();
+    ">-3</button>
+
+    <button onclick="
+      cartQuantity += 4;
+      updateCartQuantity();
+    ">+4</button>
+
+    <button onclick="
+      cartQuantity += 5;
+      updateCartQuantity();
+    ">+5</button>
+    
+    <button onclick="
+      cartQuantity = 0;
+      alert('Cart is sucessfully reset')
+      updateCartQuantity();
+    ">Rest cart</button>
+
+    <p class="view-quantity"></p>
+
+    <script>
+      let cartQuantity = 0;
+
+      updateCartQuantity();
+
+      function updateCartQuantity(){
+        document.querySelector('.view-quantity')
+          .innerHTML = "Cart quantity: " + cartQuantity;
+      }
+    </script>
+  </body>
+</html>

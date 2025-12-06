@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>DOM Project</title>
+  </head>
+
+  <body>
+    <p>Amaon cost caluclator</p>
+
+    <!-- onkeydown is an event listener for pressing keys-->
+    <input 
+      placeholder="input cost"
+      class="js-input-cost"
+      onkeydown="handleCostInput(event);">
+    <button 
+      class="js-calculate"
+      onclick="calculateCost();">
+      Calculate
+    </button>
+    <p class="js-total-cost"></p>
+
+    <script>
+      function handleCostInput(event){
+        if(event.key === 'Enter')
+          calculateCost();
+      }
+
+      function calculateCost(){
+
+        // The value we get from HTML is a string
+        let cost = Number(document
+          .querySelector('.js-input-cost').value);
+
+        if(cost < 40){
+          cost = ((cost * 100) + 1000)/100;
+        }
+
+        document.querySelector('.js-total-cost')
+          .innerHTML = `$${cost}`;
+      }
+    </script>
+  </body>
+</html>
