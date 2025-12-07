@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    
+  </body>
+
+  <script>
+    const nums = [10,20,30];
+
+    nums[2] = 99;
+
+    console.log(nums);
+
+    //11c
+    console.log(getLastValue([10,20,"good"]));
+
+    function getLastValue(array){
+      return array[array.length - 1];
+    }
+
+    //11d
+    console.log(arraySwap([10,20,"good"]));
+    console.log(arraySwap([10,20,30]));
+    
+    function arraySwap(array){
+      const firstElem = array[0];
+      array[0] = array[array.length - 1];
+      array[array.length-1] = firstElem;
+
+      return array;
+    }
+
+    //11d
+    for(i=0; i <= 10; i++){
+      if(i % 2 === 0){
+        console.log(i);
+      }
+    }
+
+    //11e
+    for(i = 5; i >= 0; i--){
+      console.log(i);
+    }
+
+    //11f
+    i = 0;
+
+    while(i <= 10){
+      console.log(i);
+      i += 2;
+    }
+
+    j = 5;
+
+    while(j >= 0){
+      console.log(j);
+      j--;
+    }
+
+    //11g
+    const array1 = [2,2,3];
+    const array2 = [];
+    for(i = 0; i < array1.length; i++){
+      array2[i] = array1[i] + 1;
+    }
+
+    console.log(array2);
+
+    //11h
+    console.log(addOne([-2, -8, 0, 99]));
+    function addOne(array){
+      resultArray = [];
+      array.forEach((val, index) => {
+        resultArray[index] = val + 1;
+      }); 
+      
+      return resultArray;
+    }
+
+    //11i
+    console.log(addNum([-2, -8, 0, 99], 5));
+    function addNum(array, num){
+      resultArray = [];
+      array.forEach((val, index) => {
+        resultArray[index] = val + num;
+      }); 
+      
+      return resultArray;
+    }
+
+    //11j 
+    console.log(addArrays([1, 1, 2], [1, 1, 3]));
+    function addArrays(array1, array2){
+      resultArray = [];
+      array1.forEach((val, index) => {
+        resultArray[index] = array1[index] + array2[index];
+      }); 
+      
+      return resultArray;
+    }
+
+    //11k
+    console.log(countPositive([-1, -1, 2]));
+    function countPositive(array){
+      postiveNums = 0;
+      array.forEach((val) => {
+        if(val > 0)
+          postiveNums++;
+      }); 
+      
+      return postiveNums;
+    } 
+
+    //11lm
+    
+    console.log(minMax([0,-5,2,3]));
+    function minMax(array){
+      minMaxValues = {min: 1, max: 0};
+
+      if(!Array.isArray(array)) return {min: null, max: null};
+      if(array.length === 1) return {min: array[0], max: array[0]};
+
+      array.forEach((val) => {
+        if(minMaxValues.max < val)
+          minMaxValues.max = val;
+        else if(minMaxValues.min > val)
+          minMaxValues.min = val;
+      }); 
+      
+      return minMaxValues;
+    } 
+
+    //11n
+    console.log(countWords(['apple', 'grape', 'grape', 'apple']));
+    function countWords(array){
+      let counter = {};
+
+      array.forEach((value) => {
+        if(counter[value]){
+          counter[value] += 1
+        }else{
+          counter[value] = 1
+        }
+      });
+
+      return counter;
+    } 
+
+  </script>
+</html>

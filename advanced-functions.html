@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <script>
+
+      // Hoisting: the ability to call fuction in any order(before or after)
+      greeting();
+      function greeting(){
+        console.log("Hello");
+      }
+      greeting();
+
+      // functions are values, hence can be assigned and saved to a variable
+      console.log(typeof greeting);
+
+      // When functions are assigned to variable it doesn't support hoisting
+      // greet();
+
+      //These anonymous functions can alos have a name
+      const greet = function() /*func_name*/{
+        console.log('hi');
+      }
+      greet();
+
+      // Function can also be passed as parameters
+      const object1 = {
+        fun: function(param){
+          param();
+        }
+      }
+              // This function passed is called callback
+      object1.fun(function(){
+        console.log('Sveiki!');
+      });
+
+      // Asynchronous functions
+      // calls the function after 3 sec
+      setTimeout(function(){
+        console.log('setTimeout hello');
+      }, 3000);
+
+      console.log("next line");
+
+      // calls the function continously after every 3 sec
+      setInterval(function(){
+        console.log('setInterval Hi');
+      }, 3000);
+
+      console.log('next line 2');
+      
+      // looping an array
+      ['eat', 'study', 'sleep'].forEach(function(value,index){
+          
+        // 'return' here acts like 'continue';
+        if(value === 'study') return;
+        console.log(value);
+      });
+
+
+      // arrow functions
+      // One of the advantages of arrow function are shorthands
+      const arrowFunc1 = () => {
+        console.log("arrow func 1");
+      }
+      arrowFunc1();
+
+      //one parameter: '()' are optional if the funciton only have one parameter
+      const arrowFunc2 = param => {
+        console.log(param);
+      }
+      arrowFunc2("Labas arrowFunc2");
+
+      //one line: if the code in function has only one line then '{}' are optional
+      const arrowFunc3 = () => 1 +2;
+      console.log(arrowFunc3());
+    </script>
+  </body>
+</html>

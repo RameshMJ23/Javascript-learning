@@ -1,4 +1,6 @@
-let todoList = [];
+let todoList = JSON.parse(
+  localStorage.getItem('todolist')
+)|| [];
 
 renderTodos();
 
@@ -18,6 +20,8 @@ function addTodo(){
     date
   });
 
+  setLocalStorage();
+
   todoInput.value = '';
   dateInput.value = '';
 
@@ -27,7 +31,9 @@ function addTodo(){
 function renderTodos(){
   let allTodos = '';
 
-  todoList.forEach(function(todo, index){
+  for(i = 0; i < todoList.length; i++){
+    const todo = todoList[i];
+
     // const todoName = todo.name;
     // const todoDate = todo.date;
     // destructuring
@@ -37,11 +43,18 @@ function renderTodos(){
       <div>${name}</div> 
       <div>${date}</div>
       <button onclick = "
-        todoList.splice(${index}, 1);
+        todoList.splice(${i}, 1);
+        setLocalStorage();
         renderTodos();  
       " class="delete-button">Delete</button>
     `;
-  });
+  }
 
   document.querySelector(".js-all-todos").innerHTML = allTodos;
+}
+
+function setLocalStorage(){
+  localStorage.setItem(
+    'todolist', JSON.stringify(todoList)
+  );
 }

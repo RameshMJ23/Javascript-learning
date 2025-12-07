@@ -27,7 +27,9 @@ function addTodo(){
 function renderTodos(){
   let allTodos = '';
 
-  todoList.forEach(function(todo, index){
+  for(i = 0; i < todoList.length; i++){
+    const todo = todoList[i];
+
     // const todoName = todo.name;
     // const todoDate = todo.date;
     // destructuring
@@ -37,11 +39,11 @@ function renderTodos(){
       <div>${name}</div> 
       <div>${date}</div>
       <button onclick = "
-        todoList.splice(${index}, 1);
+        todoList.splice(${i}, 1);
         renderTodos();  
       " class="delete-button">Delete</button>
     `;
-  });
+  }
 
   document.querySelector(".js-all-todos").innerHTML = allTodos;
 }

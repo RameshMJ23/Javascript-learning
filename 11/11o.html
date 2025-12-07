@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    
+  </body>
+
+  <script>
+
+    //11op
+    const array1 = ['hello', 'world','good', 'search', 'search'];
+    let wordSearchIndex = -1
+    for(i = 0; i < array1.length; i++){
+      if(array1[i] === 'search') {
+        wordSearchIndex = i;
+        break;
+      }
+    }
+
+    console.log(wordSearchIndex);
+
+    //11q
+    //console.log(findIndex(['green', 'blue'], 'red'));
+    console.log(unique(['green', 'red', 'blue', 'red']));
+    console.log(unique(['red', 'green', 'green', 'red']));
+    function findIndex(array, word){
+
+      let wordIndex = -1;
+      for(i = 0; i < array.length; i++){
+        if(array[i] === word) {
+          wordIndex = i;
+          break;
+        }
+      }
+
+      return wordIndex;
+    }
+
+    //11w
+    function unique(array){
+      resultArray = [];
+      array.forEach(element => {
+        if(findIndex(resultArray, element) === -1){
+          resultArray.push(element)
+        }
+      });
+
+      return resultArray;
+    }
+
+    //11rst
+    const food = ['egg', 'apple', 'egg', 'egg', 'ham'];
+    console.log(removeEgg(food));
+    console.log(food);
+    function removeEgg(array1){
+      array = array1.slice().reverse();
+      resultArray = [];
+      eggCount = 2;
+
+      for(i = 0; i < array.length; i++){
+        if(array[i] === 'egg' && eggCount > 0){ 
+          eggCount--;
+          continue;
+        } else{
+          resultArray.push(array[i]);
+        }
+      } 
+      return resultArray.reverse();
+    }
+
+    //11v
+    for(i = 1; i <= 20; i++){
+      if(i % 3 === 0 && i % 5 === 0)
+        console.log('FissBuss');
+      else if(i % 3 === 0)
+        console.log('Fiss');
+      else if(i % 3 === 0)
+        console.log('Buss');
+      else
+        console.log(i); 
+    } 
+  </script>
+</html>
