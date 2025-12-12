@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+
+    <script>
+      const multiply = (num1, num2) => num1 * num2;
+
+      console.log(multiply(100, 85));
+
+      const countPositive = (array) => {
+        let positiveNumCount =  0;
+
+        array.forEach(num => {
+          if(num >= 0) positiveNumCount++;
+        }); 
+
+        return positiveNumCount;
+      }
+
+      console.log(countPositive([-2, 3, -5, 7, 10]));
+
+      const addNum = (array, num) => {
+        return array.map(arrayNum => arrayNum + num);
+      } 
+
+      console.log(addNum([1,2,3], 1));
+
+      function removeEgg(foods){
+        let eggRemoved = 0;
+        return foods.filter((food) => {
+          if(food === 'egg' && eggRemoved < 2){
+            eggRemoved += 1;
+            return false;
+          }else{
+            return true;
+          }
+        });
+      }
+
+      console.log(removeEgg(['egg','egg', 'apple','egg','egg','ham']));
+
+      
+
+    </script>
+  </body>
+</html>

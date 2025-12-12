@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <button onclick="
+
+        if(timeOutId) clearInterval(timeOutId);
+        
+        timeOutId = setTimeout(()=>{
+          document.querySelector('.add-status')
+            .innerHTML = '';
+        }, 2000);
+        document.querySelector('.add-status')
+            .innerHTML = 'Added';
+        
+      " class="js-add-button">
+      Add to cart
+    </button>
+    <p class="add-status"></p>
+
+    <script>
+      let timeOutId;
+
+    </script>
+  </body>
+</html>

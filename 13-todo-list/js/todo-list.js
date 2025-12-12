@@ -2,6 +2,9 @@ let todoList = [];
 
 renderTodos();
 
+document.querySelector('.js-add-button')
+  .addEventListener('click', () => addTodo());
+
 function addTodo(){
   const todoInput = document.querySelector(".js-todo-input");
   const dateInput = document.querySelector(".js-date-input");
@@ -38,12 +41,20 @@ function renderTodos(){
     allTodos += `
       <div>${name}</div> 
       <div>${date}</div>
-      <button onclick = "
-        todoList.splice(${i}, 1);
-        renderTodos();  
-      " class="delete-button">Delete</button>
+      <button class="delete-button js-delete-button">Delete</button>
     `;
   }
 
   document.querySelector(".js-all-todos").innerHTML = allTodos;
+
+  //querySelectorAll fetches all the elements that have 'js-delete-button'
+  //Only when it have valid element, the iteration happens and eventListeners are added
+  document.querySelectorAll('.js-delete-button')
+    .forEach((deleteButtonElem, index) =>{
+      deleteButtonElem
+        .addEventListener('click', () => {
+          todoList.splice(index, 1);
+          renderTodos(); 
+        });
+  });
 }

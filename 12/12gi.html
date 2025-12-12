@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+  <title>App</title>
+  <body>
+    <button class="js-add-button">Add</button>
+    <button class="js-remove-button">remove</button>
+
+    <script>
+
+      let intervalId;
+      let intervalId2;
+      let messages = 2;
+
+      //12q
+      document.querySelector('.js-add-button').addEventListener('click', () => {
+        messages += 1;
+      });
+      
+      document.querySelector('.js-remove-button').addEventListener('click', () => {
+        if(messages > 1){
+          messages -= 1;
+        }else{
+          clearInterval(intervalId);
+          clearInterval(intervalId2);
+          document.title = 'App';
+        }
+      });
+
+      intervalId = setInterval(() => {
+        document.title = `(${messages}) new messages!`
+      }, 1000);
+
+      intervalId2 = setInterval(() => {
+        document.title = "App"
+      }, 2000);
+
+    </script>
+  </body>
+</html>

@@ -2,8 +2,9 @@
 
 <html>
   <body>
+    <button class="js-click-button">Click me</button>
     <script>
-
+      
       // Hoisting: the ability to call fuction in any order(before or after)
       greeting();
       function greeting(){
@@ -24,7 +25,7 @@
       greet();
 
       // Function can also be passed as parameters
-      const object1 = {
+     /* const object1 = {
         fun: function(param){
           param();
         }
@@ -74,6 +75,63 @@
       //one line: if the code in function has only one line then '{}' are optional
       const arrowFunc3 = () => 1 +2;
       console.log(arrowFunc3());
+
+      const object2 = {
+        method: ()=>{
+
+        },
+        // ^ shorthand method
+        method(){
+
+        }
+      }
+        
+       const clickFunction = () =>{
+        console.log("Click button 2");
+      }
+
+      //By adding event listeners using 'addEventListener' we can add/remove 
+      // multiple listeners
+      document.querySelector('.js-click-button')
+        .addEventListener('click', () =>{
+          console.log("Click button");
+        });
+
+      document.querySelector('.js-click-button')
+        .addEventListener('click', clickFunction);
+
+      document.querySelector('.js-click-button')
+        .removeEventListener('click', clickFunction);
+    */
+
+      // filter()
+      // Filtering positive numbers
+      // Create a new array by filtering values based on the function given
+      // function returns true/false, if true the value is added
+      console.log([1, -3, 5].filter((value, index) => {
+        if(value >= 0)
+          return true;
+      }));
+
+      // ^ sinplifying the above statement
+      // if the function is one line, the value after the arrow is returned
+      console.log([1, -3, 5].filter(value => value >= 0));
+
+
+      // map()
+      // Create a new array by iterating values based on the function given
+      console.log([1, 1, 5].map((value, index) => {
+        return value * 2;
+      }));
+
+      // ^ sinplifying the above statement
+      console.log([1, 1, 5].map(value => value * 2)); 
+
+      // Closures: 
+      // If a function has the access to a value it always have the access to that value
+      // It is binded with that function(closure)
+      // Ex: Todo project addEventListeners 
+
     </script>
   </body>
 </html>

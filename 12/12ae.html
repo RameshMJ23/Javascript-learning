@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <button onclick="
+      //12cd
+    " class="js-finish-button">
+      Finish
+    </button>
+    <button onclick="
+      //12e
+      setTimeout(()=>{
+        document.querySelector('.add-status')
+          .innerHTML = '';
+      }, 2000)
+      document.querySelector('.add-status')
+          .innerHTML = 'Added';
+      " class="js-add-button">
+      Add to cart
+    </button>
+    <p class="add-status"></p>
+
+    <script>
+
+      //12q
+      document.querySelector('.js-finish-button').addEventListener('click', () => {
+        setTimeout(()=>{
+        document.querySelector('.js-finish-button')
+            .innerHTML = 'Finished!';
+        }, 2000)
+        document.querySelector('.js-finish-button')
+            .innerHTML = 'Loading..';
+      });
+
+      runTwice(add);
+
+      function add(){
+        console.log(2 + 3);
+      }
+
+      function runTwice(fun){
+        fun(); fun();
+      }
+
+
+    </script>
+  </body>
+</html>

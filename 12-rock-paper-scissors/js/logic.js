@@ -17,6 +17,37 @@ let score = JSON.parse(localStorage.getItem('score'))
   };
 }*/
 
+document.querySelector('.js-reset-button')
+  .addEventListener('click', () => resetGame());
+
+document.querySelector('.js-auto-play')
+  .addEventListener('click', () => autoPlay());
+
+document.querySelector('.js-rock-button')
+  .addEventListener('click', () => playGame('rock'));
+
+document.querySelector('.js-paper-button')
+  .addEventListener('click', () => playGame('paper'));
+
+document.querySelector('.js-scissors-button')
+  .addEventListener('click', () => playGame('scissors'));
+
+document.querySelector('body')
+  .addEventListener('keydown', (event) => {
+    console.log(event.key);
+    if(event.key === 'r'){
+      playGame('rock');
+    }else if(event.key === 'p'){
+      playGame('paper');
+    }else if(event.key === 's'){
+      playGame('scissors'); 
+    }else if(event.key === 'a'){
+      autoPlay();
+    }else if(event.key === 'Backspace'){
+      resetGame();
+    }
+  })
+
 updateScore();
 
 function autoPlay(){
@@ -50,6 +81,8 @@ function autoPlay(){
 }
 
 function playGame(userMove){
+
+  console.log(userMove);
 
   let result = '';
 
@@ -100,6 +133,14 @@ function playGame(userMove){
   //JSON.stringify helps to make the objects into strings
   //JSON.parse helps to convert string values in localStorage into objects 
   localStorage.setItem('score', JSON.stringify(score));
+}
+
+function resetGame(){
+  score.losses = 0;
+  score.wins = 0;
+  score.ties = 0;
+  localStorage.removeItem(localStorage.removeItem('score'));
+  updateScore();
 }
 
 function generateComputerMove(){
